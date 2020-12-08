@@ -9,6 +9,7 @@ use std::fs;
 use std::io::{self, Read};
 use std::ptr::null;
 use std::sync::mpsc;
+use std::time::SystemTime;
 
 use futures::join;
 use rayon::prelude::*;
@@ -22,7 +23,8 @@ fn main() {
             let mut buffer = String::new();
             let len = io::stdin().read_to_string(&mut buffer).unwrap();
 
-            return (len, Regex::new(">[^\n]*\n|\n").unwrap().replace_all(&buffer,"").to_string());
+            let start = SystemTime::now();
+            return (start, len, Regex::new(">[^\n]*\n|\n").unwrap().replace_all(&buffer,"").to_string());
         };
 
         let future2 = async {
@@ -52,7 +54,7 @@ fn main() {
         return join!(future1, future2);
     };
 
-    let ((input_len, text), (to_replace, variants)) : ((usize, String), (Vec<(Regex, &str)>, Vec<Regex>)) =
+    let ((start, input_len, text), (to_replace, variants)) : ((SystemTime, usize, String), (Vec<(Regex, &str)>, Vec<Regex>)) =
         futures::executor::block_on(future);
 
     let removed_description_len = text.len();
@@ -88,5 +90,7 @@ fn main() {
     for variant in counts {
         println!("{}", variant)
     }
+
     println!("\n{}\n{}\n{:?}", input_len, removed_description_len, sequence_len);
+    println!("Time: {:?}", start.elapsed().unwrap());
 }
