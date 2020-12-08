@@ -2,8 +2,10 @@ extern crate libc;
 extern crate rayon;
 extern crate regex;
 
+use std::borrow::Cow;
 use std::cmp;
 use std::env;
+use std::fs;
 use std::io::{self, Read};
 use std::ptr::null;
 use std::sync::mpsc;
@@ -15,19 +17,12 @@ use regex::Regex;
 use self::rayon::{ThreadPool, ThreadPoolBuilder};
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let file = &args[1];
-    println!("{:?}", file);
-    println!("starting");
-    let pool = ThreadPoolBuilder::new().build().expect("Failed to build pool");
-
     let future = async move {
         let future1 = async move {
             let mut buffer = String::new();
             let len = io::stdin().read_to_string(&mut buffer).unwrap();
 
-            Regex::new(">[^\n]*\n|\n").unwrap().replace_all(&buffer,"");
-            return (len, buffer);
+            return (len, Regex::new(">[^\n]*\n|\n").unwrap().replace_all(&buffer,"").to_string());
         };
 
         let future2 = async {
@@ -57,22 +52,21 @@ fn main() {
         return join!(future1, future2);
     };
 
-    print!("finished join 1");
-
     let ((input_len, text), (to_replace, variants)) : ((usize, String), (Vec<(Regex, &str)>, Vec<Regex>)) =
         futures::executor::block_on(future);
 
-    let text_len= text.len();
+    let removed_description_len = text.len();
+
     let t = &text;
-    let t2 = &text.clone();
+    let t2 = &(text.clone());
 
     let f2 = async move {
         let future1 = async move {
+            let mut output = String::from(t);
             for (r, replacement) in to_replace {
-                r.replace_all(t, replacement);
+                output = r.replace_all(&output, replacement).to_string();
             }
-
-            return (*t).len();
+            return output.len();
         };
 
         let future2 = async move {
@@ -89,12 +83,10 @@ fn main() {
         return join!(future1, future2);
     };
 
-    println!("finished join 2");
-
     let (sequence_len, counts) : (usize, Vec<String>) = futures::executor::block_on(f2);
 
     for variant in counts {
         println!("{}", variant)
     }
-    println!("\n{}\n{}\n{:?}", input_len, text_len, sequence_len);
+    println!("\n{}\n{}\n{:?}", input_len, removed_description_len, sequence_len);
 }
