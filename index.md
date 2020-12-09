@@ -33,5 +33,5 @@ Wesley Araujo Souza
 
 ## Códigos-Fonte
 
-[Rust Sequencial](https://github.com/Rheagor/GrupoF/blob/master/src/sequencial.rs)   
-[Rust Paralelo](https://github.com/Rheagor/GrupoF/blob/master/src/main.rs)
+[Rust Sequencial](https://raw.githubusercontent.com/Rheagor/GrupoF/master/src/sequencial.rs?token=AKC5CGBBP6GEOBB5W2P5V5K72EM36)   
+[Rust Paralelo](https://raw.githubusercontent.com/Rheagor/GrupoF/master/src/main.rs?token=AKC5CGBGA4PL4OKONOD6Q4S72EM2M)
