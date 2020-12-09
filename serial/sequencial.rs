@@ -1,8 +1,6 @@
 extern crate regex;
 
 use std::io::{self, Read};
-use std::sync::Arc;
-use std::thread;
 use std::time::SystemTime;
 
 macro_rules! regex { ($re:expr) => { ::regex::bytes::Regex::new($re).unwrap() } }
@@ -15,7 +13,6 @@ fn main() {
 
     seq = regex!(">[^\n]*\n|\n").replace_all(&seq, &b""[..]).into_owned();
     let clen = seq.len();
-    let seq_arc = Arc::new(seq.clone());
 
     let variants = vec![
         regex!("agggtaaa|tttaccct"),
@@ -30,10 +27,8 @@ fn main() {
     ];
     let mut counts = vec![];
     for variant in variants {
-        let seq = seq_arc.clone();
         let restr = variant.to_string();
-        let future = thread::spawn(move || variant.find_iter(&seq).count());
-        counts.push((restr, future));
+        counts.push((restr, variant.find_iter(&seq).count()));
     }
 
     let substs = vec![
@@ -49,7 +44,7 @@ fn main() {
     }
 
     for (variant, count) in counts {
-        println!("{} {}", variant, count.join().unwrap());
+        println!("{} {}", variant, count);
     }
     let new_sys_time = SystemTime::now();
     let difference = new_sys_time.duration_since(sys_time);
