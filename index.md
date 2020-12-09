@@ -1,5 +1,4 @@
-``` markdown 
-**_Projeto regex-redux Grupo F_**
+## Projeto regex-redux Grupo F
 
 **COMP0397 - Programação Paralela e Concorrente**
 
@@ -11,7 +10,6 @@ Prof. Hendrik Macedo
             José Ilmar Cruz Freire Neto
             Matheus Lima dos Santos
             Wesley Araujo Souza
-```
 
 
 
