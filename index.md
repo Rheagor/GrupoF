@@ -15,31 +15,35 @@ Wesley Araujo Souza
 
 
 ## Tabela de Comparação de Tempos em Paralelo
-**Para [fasta_50000]():**
+Para [fasta_50000](https://raw.githubusercontent.com/Rheagor/GrupoF/master/inputs/fasta150000.txt?token=ALMH6QAPEJLOCJF5DUL374C73JUVW):
 | Nº de Cores | Rust | C |
 | ------------------- | ------------------- | ------------------- |
 | 1 | 0.784 s | 1.346 s |
 | 2 | 0.730 s | 1.343 s |
 | 3 | 0.672 s | 1.276 s |
 | 4 | 0.681 s | 1.256 s |
-**Para [fasta_150000]():**
+| ------------------- | ------------------- | ------------------- |
+Para [fasta_150000]():
 | Nº de Cores | Rust | C |
 | ------------------- | ------------------- | ------------------- |
 | 1 | 2.176 s | 13.163 s |
 | 2 | 1.870 s | 13.145 s |
 | 3 | 1.746 s | 13.151 s |
 | 4 | 1.761 s | 12.448 s |
+| ------------------- | ------------------- | ------------------- |
 
 
 ## Tabela de Comparação de Tempos Sequencial
-**Para [fasta_50000]():**
+**Para [fasta_50000](https://raw.githubusercontent.com/Rheagor/GrupoF/master/inputs/fasta150000.txt?token=ALMH6QAPEJLOCJF5DUL374C73JUVW):**
 | Rust | C |
 | ------------------- | ------------------- |
 | 0.642 s | 1.226 s |
-**Para [fasta_150000]():**
+| ------------------- | ------------------- |
+**Para [fasta_150000](https://raw.githubusercontent.com/Rheagor/GrupoF/master/inputs/fasta150000.txt?token=ALMH6QDBBCQ2RGWXL4XIZZC73JU2M):**
 | Rust | C |
 | ------------------- | ------------------- |
 | 1.957 s | 12.71 s |
+| ------------------- | ------------------- |
 
 
 ## Códigos-Fonte
