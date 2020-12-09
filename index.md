@@ -23,7 +23,7 @@ Para [fasta_50000](https://raw.githubusercontent.com/Rheagor/GrupoF/master/input
 | 3 | 0.672 s | 1.276 s |
 | 4 | 0.681 s | 1.256 s |
 | ------------------- | ------------------- | ------------------- |
-Para [fasta_150000]():
+Para [fasta_150000](https://raw.githubusercontent.com/Rheagor/GrupoF/master/inputs/fasta150000.txt?token=ALMH6QDBBCQ2RGWXL4XIZZC73JU2M):
 | Nº de Cores | Rust | C |
 | ------------------- | ------------------- | ------------------- |
 | 1 | 2.176 s | 13.163 s |
@@ -34,16 +34,16 @@ Para [fasta_150000]():
 
 
 ## Tabela de Comparação de Tempos Sequencial
-**Para [fasta_50000](https://raw.githubusercontent.com/Rheagor/GrupoF/master/inputs/fasta150000.txt?token=ALMH6QAPEJLOCJF5DUL374C73JUVW):**
+Para [fasta_50000](https://raw.githubusercontent.com/Rheagor/GrupoF/master/inputs/fasta150000.txt?token=ALMH6QAPEJLOCJF5DUL374C73JUVW):
 | Rust | C |
 | ------------------- | ------------------- |
 | 0.642 s | 1.226 s |
 | ------------------- | ------------------- |
-**Para [fasta_150000](https://raw.githubusercontent.com/Rheagor/GrupoF/master/inputs/fasta150000.txt?token=ALMH6QDBBCQ2RGWXL4XIZZC73JU2M):**
+Para [fasta_150000](https://raw.githubusercontent.com/Rheagor/GrupoF/master/inputs/fasta150000.txt?token=ALMH6QDBBCQ2RGWXL4XIZZC73JU2M):
 | Rust | C |
 | ------------------- | ------------------- |
 | 1.957 s | 12.71 s |
-| ------------------- | ------------------- |
+
 
 
 ## Códigos-Fonte
