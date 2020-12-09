@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+## Tabela de Comparação de Tempos
 
-You can use the [editor on GitHub](https://github.com/Rheagor/GrupoF/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Rheagor/GrupoF/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+| Paralelo  | Sequencial  |
+| ------------------- | ------------------- |
+|  23.2243ms |  23.954ms |
+|  21.9764ms |  23.3976ms |
+|  20.9653ms |  23.52ms |
+|  23.4822ms |  24.0426ms |
+|  21.6521ms |  23.5164ms |
+|  21.7158ms |  23.6583ms |
+|  21.1937ms |  23.9233ms |
+|  21.1294ms |  24.0621ms |
+|  20.9544ms |  24.5199ms |
+|  21.4177ms |  24.9635ms |
+|  21.4844ms |  24.238ms |
+|  21.1856ms |  24.0447ms |
+|  21.1783ms |  22.9234ms |
+|  21.563ms |  23.9984ms |
+|  22.211ms |  22.8974ms |
+|  21.4464ms |  23.5693ms |
+|  21.1182ms |  24.111ms |
+|  22.513ms |  23.7648ms |
+|  20.9125ms |  23.244ms |
+|  20.9977ms |  23.2955ms |
+|  21.3653ms |  24.193ms |
+|  21.3405ms |  24.3893ms |
+|  21.743ms |  23.0827ms |
+|  21.5851ms |  24.0286ms |
+|  22.0106ms |  24.3195ms |
+|  21.8997ms |  23.1707ms |
+|  21.4355ms |  23.5461ms |
+|  21.1779ms |  24.8897ms |
+|  21.5026ms |  23.3862ms |
+|  20.9984ms |  22.6345ms |
