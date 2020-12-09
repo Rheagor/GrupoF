@@ -14,8 +14,18 @@ Wesley Araujo Souza
 
 
 
-## Tabela de Comparação de Tempos
+## Tabela de Comparação de Tempos em Paralelo
 
-|  Linguagem | Paralelo  | Sequencial  |
+| Nº de Cores | Rust | C |
 | ------------------- | ------------------- | ------------------- |
-|  Rust |  21.57933ms |  23.77615ms |
+| 1 | 0.100 s | 0.068 s |
+| 2 | 0.089 s | 0.069 s |
+| 3 | 0.154 s | 0.084 s |
+| 4 | 0.137 s | 0.119 s |
+
+
+## Tabela de Comparação de Tempos Sequencial
+
+| Rust | C |
+| ------------------- | ------------------- |
+| 0.244 s | 0.018 s |
